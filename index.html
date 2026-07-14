@@ -4,9 +4,9 @@
 
 <head> <!-- Inicia la sección de configuración -->
 
-<meta charset="UTF-8"> <!-- Permite mostrar correctamente caracteres como la ñ y las tildes -->
+<meta charset="UTF-8"> <!-- Permite mostrar correctamente caracteres especiales como la ñ y las tildes -->
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página se adapte a celulares y tabletas -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página sea adaptable a celulares y tabletas -->
 
 <title>Mi Primera Página Web</title> <!-- Nombre que aparece en la pestaña del navegador -->
 
@@ -17,7 +17,7 @@ body{
 
     font-family: Arial, sans-serif; /* Tipo de letra */
 
-    background-color:black; /* Color de respaldo si la imagen no carga */
+    background-color:black; /* Color de respaldo */
 
     background-image:url("musica.jpg"); /* Imagen de fondo */
 
@@ -27,13 +27,13 @@ body{
 
     background-repeat:no-repeat; /* Evita que la imagen se repita */
 
-    background-attachment:fixed; /* La imagen permanece fija al hacer scroll */
+    background-attachment:fixed; /* Mantiene fija la imagen */
 
-    margin:0; /* Elimina los márgenes del navegador */
+    margin:0; /* Elimina los márgenes */
 
-    min-height:100vh; /* Hace que el fondo ocupe toda la altura de la pantalla */
+    min-height:100vh; /* La página ocupa toda la altura */
 
-    display:flex; /* Activa Flexbox para centrar el contenido */
+    display:flex; /* Activa Flexbox */
 
     justify-content:center; /* Centra horizontalmente */
 
@@ -41,67 +41,80 @@ body{
 
 }
 
-/* Caja donde estará el contenido */
+/* Caja principal */
 .tarjeta{
 
-    width:500px; /* Ancho de la tarjeta */
+    width:500px; /* Ancho */
 
-    background:rgba(255,255,255,0.85); /* Fondo blanco semitransparente */
+    background:rgba(255,255,255,0.85); /* Fondo blanco transparente */
 
     padding:30px; /* Espacio interno */
 
     border-radius:15px; /* Esquinas redondeadas */
 
-    box-shadow:0px 0px 20px black; /* Agrega una sombra */
+    box-shadow:0 0 20px black; /* Sombra */
 
     text-align:center; /* Centra el contenido */
 
 }
 
-/* Estilo del título principal */
+/* Color del título */
 h1{
 
-    color:#7B1FA2; /* Color morado */
+    color:#7B1FA2;
 
 }
 
-/* Estilo del subtítulo */
+/* Color del subtítulo */
 h2{
 
-    color:#512DA8; /* Morado más oscuro */
+    color:#512DA8;
 
 }
 
-/* Estilo de la lista */
+/* Lista */
 ul{
 
-    text-align:left; /* Alinea la lista hacia la izquierda */
+    text-align:left;
 
 }
 
-/* Estilo del botón */
+/* Botón */
 button{
 
-    background:#7B1FA2; /* Fondo morado */
+    background:#7B1FA2;
 
-    color:white; /* Letras blancas */
+    color:white;
 
-    border:none; /* Sin borde */
+    border:none;
 
-    padding:12px 20px; /* Espacio interno */
+    padding:12px 20px;
 
-    border-radius:8px; /* Esquinas redondeadas */
+    border-radius:8px;
 
-    cursor:pointer; /* Cambia el cursor por una mano */
+    cursor:pointer;
 
-    font-size:16px; /* Tamaño de la letra */
+    font-size:16px;
 
 }
 
-/* Cambia el color cuando el mouse pasa por encima */
+/* Cambia el color al pasar el mouse */
 button:hover{
 
     background:#512DA8;
+
+}
+
+/* Estilo del mensaje */
+#mensaje{
+
+    margin-top:20px;
+
+    font-size:22px;
+
+    color:#7B1FA2;
+
+    font-weight:bold;
 
 }
 
@@ -113,11 +126,11 @@ button:hover{
 
 <div class="tarjeta"> <!-- Caja principal -->
 
-<img src="musica.jpg" width="150" alt="Logo musica"> <!-- Muestra el logo de musica -->
+<img src="musica.jpg" width="150" alt="Imagen de música"> <!-- Imagen -->
 
-<h1>Mi Primera Página Web</h1> <!-- Título principal -->
+<h1>Mi Primera Página Web</h1> <!-- Título -->
 
-<p> <!-- Comienza un párrafo -->
+<p> <!-- Comienza el párrafo -->
 
 Hola, mi nombre es <strong>Sara Sofía Cortés Rodríguez</strong>.<br>
 
@@ -127,7 +140,7 @@ Estoy aprendiendo HTML en el colegio CEDID San Pablo.
 
 <h2>Mis materias favoritas</h2> <!-- Subtítulo -->
 
-<ul> <!-- Inicia una lista -->
+<ul> <!-- Inicia la lista -->
 
 <li>🎵 Música</li> <!-- Primer elemento -->
 
@@ -137,28 +150,76 @@ Estoy aprendiendo HTML en el colegio CEDID San Pablo.
 
 </ul> <!-- Finaliza la lista -->
 
-<button onclick="saludar()"> <!-- Botón que ejecuta una función -->
+<button onclick="saludar()"> <!-- Cuando se hace clic ejecuta la función saludar -->
 
 Haz clic aquí
 
 </button> <!-- Finaliza el botón -->
 
+<p id="mensaje"></p> <!-- Aquí aparecerá el mensaje -->
+
 </div> <!-- Finaliza la tarjeta -->
+
+<!-- Biblioteca que permite crear el efecto de confeti -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 
 <script> // Comienza JavaScript
 
-/* Se crea una función llamada saludar */
+/* Función que se ejecuta al hacer clic */
 function saludar(){
 
-    /* Muestra un mensaje cuando el usuario hace clic */
-    alert("¡Hola! Gracias por visitar mi página. 💜");
+    /* Escribe el mensaje dentro de la página */
+    document.getElementById("mensaje").innerHTML =
+    "💜 ¡Gracias por visitar mi página! 💜";
+
+    /* Tiempo que durarán los confetis */
+    var duracion = 4 * 1000;
+
+    /* Calcula cuándo deben terminar */
+    var fin = Date.now() + duracion;
+
+    /* Función que lanza confetis continuamente */
+    (function lanzar(){
+
+        /* Confeti desde la izquierda */
+        confetti({
+
+            particleCount:4,
+
+            angle:60,
+
+            spread:70,
+
+            origin:{x:0}
+
+        });
+
+        /* Confeti desde la derecha */
+        confetti({
+
+            particleCount:4,
+
+            angle:120,
+
+            spread:70,
+
+            origin:{x:1}
+
+        });
+
+        /* Repite mientras no termine el tiempo */
+        if(Date.now() < fin){
+
+            requestAnimationFrame(lanzar);
+
+        }
+
+    })();
 
 }
 
-/* Finaliza la función */
-
 </script> <!-- Finaliza JavaScript -->
 
-</body> <!-- Finaliza el contenido visible -->
+</body> <!-- Finaliza el contenido -->
 
 </html> <!-- Finaliza el documento HTML -->
