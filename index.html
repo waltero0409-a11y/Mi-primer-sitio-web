@@ -1,0 +1,110 @@
+<!DOCTYPE html> <!-- Indica que el documento utiliza HTML5 -->
+
+<html lang="es"> <!-- Comienza el documento HTML y el idioma es español -->
+
+<head> <!-- Inicia la sección de configuración de la página -->
+
+<meta charset="UTF-8"> <!-- Permite mostrar correctamente letras como á, é, í, ó, ú y ñ -->
+
+<title>Mi Primera Página Web</title> <!-- Texto que aparece en la pestaña del navegador -->
+
+<style> <!-- Aquí comienza el código CSS -->
+
+body{ /* Se aplican estilos a toda la página */
+
+    font-family: Arial; /* Cambia el tipo de letra */
+
+    background:#f4f4f4; /* Color del fondo */
+
+    text-align:center; /* Centra el texto */
+
+    margin-top:60px; /* Deja espacio en la parte superior */
+
+} /* Finaliza los estilos del body */
+
+.tarjeta{ /* Crea una caja llamada tarjeta */
+
+    width:500px; /* La tarjeta tendrá 500 píxeles de ancho */
+
+    margin:auto; /* Centra la tarjeta */
+
+    background:white; /* Fondo blanco */
+
+    padding:25px; /* Espacio interno */
+
+    border-radius:10px; /* Esquinas redondeadas */
+
+    box-shadow:0px 0px 10px gray; /* Agrega una sombra */
+
+} /* Finaliza los estilos de la tarjeta */
+
+button{ /* Estilos para el botón */
+
+    background:#0078D7; /* Color azul */
+
+    color:white; /* Texto blanco */
+
+    border:none; /* Elimina el borde */
+
+    padding:12px 20px; /* Espacio interno */
+
+    border-radius:6px; /* Esquinas redondeadas */
+
+    cursor:pointer; /* Cambia el cursor por una mano */
+
+} /* Finaliza los estilos del botón */
+
+button:hover{ /* Cuando el mouse pasa sobre el botón */
+
+    background:#005fa3; /* Cambia el color del botón */
+
+} /* Finaliza el efecto hover */
+
+</style> <!-- Termina el CSS -->
+
+</head> <!-- Finaliza la cabecera -->
+
+<body> <!-- Comienza el contenido visible -->
+
+<div class="tarjeta"> <!-- Caja principal -->
+
+<h1>Mi Primera Página Web</h1> <!-- Título principal -->
+
+<p> <!-- Comienza un párrafo -->
+Hola, mi nombre es María.
+Estoy aprendiendo HTML en el colegio.
+</p> <!-- Finaliza el párrafo -->
+
+<h2>Mis materias favoritas</h2> <!-- Subtítulo -->
+
+<ul> <!-- Comienza una lista -->
+
+<li>Matemáticas</li> <!-- Primer elemento -->
+
+<li>Tecnología</li> <!-- Segundo elemento -->
+
+<li>Inglés</li> <!-- Tercer elemento -->
+
+</ul> <!-- Finaliza la lista -->
+
+<button onclick="saludar()"> <!-- Al hacer clic ejecuta la función saludar -->
+
+Haz clic aquí <!-- Texto del botón -->
+
+</button> <!-- Finaliza el botón -->
+
+</div> <!-- Finaliza la tarjeta -->
+
+<script> <!-- Comienza JavaScript -->
+
+function saludar(){ /* Se crea la función llamada saludar */
+
+alert("¡Hola! Gracias por visitar mi página."); /* Muestra un mensaje emergente */
+
+} /* Finaliza la función */
+
+</script> <!-- Termina JavaScript -->
+
+</body> <!-- Finaliza el contenido -->
+
+</html> <!-- Finaliza el documento HTML -->
