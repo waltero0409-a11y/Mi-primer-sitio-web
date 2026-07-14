@@ -1,108 +1,164 @@
-<!DOCTYPE html> <!-- Indica que el documento utiliza HTML5 -->
+<!DOCTYPE html> <!-- Indica que este documento utiliza HTML5 -->
 
-<html lang="es"> <!-- Comienza el documento HTML y el idioma es español -->
+<html lang="es"> <!-- Comienza la página y especifica que está en español -->
 
-<head> <!-- Inicia la sección de configuración de la página -->
+<head> <!-- Inicia la sección de configuración -->
 
-<meta charset="UTF-8"> <!-- Permite mostrar correctamente letras como á, é, í, ó, ú y ñ -->
+<meta charset="UTF-8"> <!-- Permite mostrar correctamente caracteres como la ñ y las tildes -->
 
-<title>Mi Primera Página Web</title> <!-- Texto que aparece en la pestaña del navegador -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que la página se adapte a celulares y tabletas -->
 
-<style> <!-- Aquí comienza el código CSS -->
+<title>Mi Primera Página Web</title> <!-- Nombre que aparece en la pestaña del navegador -->
 
+<style> /* Aquí comienza el código CSS */
+
+/* Estilos para toda la página */
 body{
-    font-family: Arial;
-    background-image: url("bts.jpg"); /* Imagen de fondo */
-    background-size: cover; /* La imagen cubre toda la pantalla */
-    background-position: center; /* La centra */
-    background-repeat: no-repeat; /* Evita que se repita */
-    text-align:center;
-    margin-top:60px;
-} /* Finaliza los estilos del body */
 
-.tarjeta{ /* Crea una caja llamada tarjeta */
+    font-family: Arial, sans-serif; /* Tipo de letra */
 
-    width:500px; /* La tarjeta tendrá 500 píxeles de ancho */
+    background-color:black; /* Color de respaldo si la imagen no carga */
 
-    margin:auto; /* Centra la tarjeta */
+    background-image:url("bts.jpg"); /* Imagen de fondo */
 
-    background:white; /* Fondo blanco */
+    background-size:cover; /* La imagen ocupa toda la pantalla */
 
-    padding:25px; /* Espacio interno */
+    background-position:center; /* Centra la imagen */
 
-    border-radius:10px; /* Esquinas redondeadas */
+    background-repeat:no-repeat; /* Evita que la imagen se repita */
 
-    box-shadow:0px 0px 10px gray; /* Agrega una sombra */
+    background-attachment:fixed; /* La imagen permanece fija al hacer scroll */
 
-} /* Finaliza los estilos de la tarjeta */
+    margin:0; /* Elimina los márgenes del navegador */
 
-button{ /* Estilos para el botón */
+    min-height:100vh; /* Hace que el fondo ocupe toda la altura de la pantalla */
 
-    background:#0078D7; /* Color azul */
+    display:flex; /* Activa Flexbox para centrar el contenido */
 
-    color:white; /* Texto blanco */
+    justify-content:center; /* Centra horizontalmente */
 
-    border:none; /* Elimina el borde */
+    align-items:center; /* Centra verticalmente */
+
+}
+
+/* Caja donde estará el contenido */
+.tarjeta{
+
+    width:500px; /* Ancho de la tarjeta */
+
+    background:rgba(255,255,255,0.85); /* Fondo blanco semitransparente */
+
+    padding:30px; /* Espacio interno */
+
+    border-radius:15px; /* Esquinas redondeadas */
+
+    box-shadow:0px 0px 20px black; /* Agrega una sombra */
+
+    text-align:center; /* Centra el contenido */
+
+}
+
+/* Estilo del título principal */
+h1{
+
+    color:#7B1FA2; /* Color morado */
+
+}
+
+/* Estilo del subtítulo */
+h2{
+
+    color:#512DA8; /* Morado más oscuro */
+
+}
+
+/* Estilo de la lista */
+ul{
+
+    text-align:left; /* Alinea la lista hacia la izquierda */
+
+}
+
+/* Estilo del botón */
+button{
+
+    background:#7B1FA2; /* Fondo morado */
+
+    color:white; /* Letras blancas */
+
+    border:none; /* Sin borde */
 
     padding:12px 20px; /* Espacio interno */
 
-    border-radius:6px; /* Esquinas redondeadas */
+    border-radius:8px; /* Esquinas redondeadas */
 
     cursor:pointer; /* Cambia el cursor por una mano */
 
-} /* Finaliza los estilos del botón */
+    font-size:16px; /* Tamaño de la letra */
 
-button:hover{ /* Cuando el mouse pasa sobre el botón */
+}
 
-    background:#005fa3; /* Cambia el color del botón */
+/* Cambia el color cuando el mouse pasa por encima */
+button:hover{
 
-} /* Finaliza el efecto hover */
+    background:#512DA8;
 
-</style> <!-- Termina el CSS -->
+}
 
-</head> <!-- Finaliza la cabecera -->
+</style> <!-- Finaliza el CSS -->
+
+</head> <!-- Finaliza la configuración -->
 
 <body> <!-- Comienza el contenido visible -->
 
 <div class="tarjeta"> <!-- Caja principal -->
 
+<img src="bts.jpg" width="150" alt="Logo BTS"> <!-- Muestra el logo de BTS -->
+
 <h1>Mi Primera Página Web</h1> <!-- Título principal -->
 
 <p> <!-- Comienza un párrafo -->
-Hola, mi nombre es Sara Sofia Cortes Rodriguez.
-Estoy aprendiendo HTML en el colegio Cedid San pablo.
+
+Hola, mi nombre es <strong>Sara Sofía Cortés Rodríguez</strong>.<br>
+
+Estoy aprendiendo HTML en el colegio CEDID San Pablo.
+
 </p> <!-- Finaliza el párrafo -->
 
 <h2>Mis materias favoritas</h2> <!-- Subtítulo -->
 
-<ul> <!-- Comienza una lista -->
+<ul> <!-- Inicia una lista -->
 
-<li>Artes</li> <!-- Primer elemento -->
+<li>🎨 Artes</li> <!-- Primer elemento -->
 
-<li>Educación Física</li> <!-- Segundo elemento -->
+<li>⚽ Educación Física</li> <!-- Segundo elemento -->
 
-<li>Biología</li> <!-- Tercer elemento -->
+<li>🧬 Biología</li> <!-- Tercer elemento -->
 
 </ul> <!-- Finaliza la lista -->
 
-<button onclick="saludar()"> <!-- Al hacer clic ejecuta la función saludar -->
+<button onclick="saludar()"> <!-- Botón que ejecuta una función -->
 
-Haz clic aquí <!-- Texto del botón -->
+Haz clic aquí
 
 </button> <!-- Finaliza el botón -->
 
 </div> <!-- Finaliza la tarjeta -->
 
-<script> <!-- Comienza JavaScript -->
+<script> // Comienza JavaScript
 
-function saludar(){ /* Se crea la función llamada saludar */
+/* Se crea una función llamada saludar */
+function saludar(){
 
-alert("¡Hola! Gracias por visitar mi página."); /* Muestra un mensaje emergente */
+    /* Muestra un mensaje cuando el usuario hace clic */
+    alert("¡Hola! Gracias por visitar mi página. 💜");
 
-} /* Finaliza la función */
+}
 
-</script> <!-- Termina JavaScript -->
+/* Finaliza la función */
 
-</body> <!-- Finaliza el contenido -->
+</script> <!-- Finaliza JavaScript -->
+
+</body> <!-- Finaliza el contenido visible -->
 
 </html> <!-- Finaliza el documento HTML -->
